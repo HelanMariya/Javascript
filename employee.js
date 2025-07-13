@@ -11,6 +11,14 @@ employee =[
     [1007, 'Shayan', 'developer', 'kochi', 30000,3],
     [1008, 'Nihaan', 'developer', 'TVM', 25000,3],
 ]
+// employee with highest salary
+console.log(`highest salary :${employee.reduce((a,b)=>a[4]>b[4]? a:b)}`);
+// employee with lowest salary
+console.log(`lowest salary :${employee.reduce((a,b)=>a[4]<b[4]? a:b)}`);
+// total salary
+const totalSalary = employee.map(emp=>emp[4]).reduce((a,b)=>a+b)
+console.log(totalSalary);
+
 
 
 
@@ -44,6 +52,10 @@ for(let subarray of employee)
         
     
 }
+// using filter
+const newarray= employee.filter(emp=>emp[2]=="developer")
+console.log(newarray);
+
 console.log("**************developer employee details **************")
 
 // 4. print employee whose salary > 30000 :filter
@@ -57,6 +69,8 @@ for(let subarray of employee)
         
     
 }
+
+employee.filter(salary=>salary[4]>30000).forEach(emp=>console.log(emp[1]))
 console.log("************** employee whose salary > 30000**************")
 
 // 5. print details of employee Laisha
@@ -70,6 +84,11 @@ for(let subarray of employee)
         
     
 }
+// find
+const array=employee.find(emp=>emp[1]=="Laisha");
+console.log(`${array[1]},${array[2]},${array[3]}`);
+
+
 console.log("************** details of employee Laisha **************")
 
 // 6. Sort employee based on their salary in decending order
