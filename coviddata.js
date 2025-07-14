@@ -34,11 +34,23 @@ console.log("Is districts with +ve cases > 15000");
 
  const value =covid_data.some(a=>a[2]>15000)
  console.log(value);
- 
-//6. Is all districts with +ve cases > 15000 ?
 
-//7. sort data with 1st dose vaccine
-//8. Print thrissur details: 
-//9. Print total number of positive cases: 
-//10. Print total number of curred cases
-//11. print curred cases in idukki:
+
+//6. sort data with 1st dose vaccine
+console.log("sort data with 1st dose vaccine");
+const data=covid_data.map(data=>data[5]).sort((a,b)=>a-b)
+console.log(data)
+//7. Print thrissur details: 
+console.log(`thrissur details ${covid_data.find(details=>details[1]=="Thrissur")}`);
+
+
+//8. Print total number of positive cases: 
+console.log(`total number of positive cases:${covid_data.map(a=>a[3]).reduce((a,b)=>a+b)}`);
+
+//9. Print total number of curred cases
+console.log(`total number of curred cases:${covid_data.map(a=>a[4]).reduce((a,b)=>a+b)}`);
+//10. print curred cases in idukki:
+console.log("curred cases in idukki:");
+const idukki =covid_data.find(a=>a[1]=="Idukki")
+console.log(`${idukki[1]},${idukki[4]}`);
+
